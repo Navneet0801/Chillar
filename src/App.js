@@ -1,12 +1,17 @@
-import './App.css';
 import FirstPage from './Components/FirstPage';
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-function App() {
+export default function App() {
   return (
-    <div>
-      <FirstPage />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<FirstPage />}>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
-export default App;
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
